@@ -8,7 +8,9 @@ function requireHTTPS(req, res, next) {
 
 const express = require('express')
 const app = express();
+const compression = require('compression');
 
+app.use(compression());
 app.use(requireHTTPS);
 app.use(express.static('./dist/health-ag'));
 
