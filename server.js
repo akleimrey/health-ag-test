@@ -6,12 +6,15 @@ function requireHTTPS(req, res, next) {
   next();
 }
 
+const compression = require('compression')
 const express = require('express')
+
+compression()
+
 const app = express();
-const compression = require('compression');
 
 app.use(compression());
-app.use(requireHTTPS);
+// app.use(requireHTTPS);
 app.use(express.static('./dist/health-ag'));
 
 app.get('/*', (req, res) => {
