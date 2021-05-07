@@ -1,0 +1,18 @@
+<body id="loginPwdRecovery" class="LoginSubPage fixedTopSubPage mobileHeadingCenter">
+    <h1>Brauchen Sie Hilfe mit ihrem Passwort?</h1>
+    <div id="mobileOnlyBackground" class="mobileOnlyBackgroundWhite"></div>
+    <div id="loginArea">
+        <div id="pwdRecoveryArea">
+            <p>Geben Sie die E-Mail-Adresse für Ihr Health AG-Konto ein und wir helfen Ihnen, ein neues Passwort festzulegen.</p>
+            <input placeholder="E-Mail-Adresse"/>
+            <div class="button">
+                <a href="">Weiter</a>
+            </div>
+            <a [routerLink]="'../email-recovery'"><small>Sie haben Ihre E-Mail-Adresse vergessen?</small></a>
+            <a [routerLink]="'../pwd-violation'" class="borderedArrowLink borderedArrowLinkWithIcon">
+                <img src="../../../assets/img/header-hilfe-services.svg" class="borderedArrowLinkIcon"/>
+                Missbrauch melden
+              </a>
+        </div>
+    </div>
+  </body>

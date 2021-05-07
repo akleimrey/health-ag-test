@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
+  <g id="Gruppe_603" data-name="Gruppe 603" transform="translate(-30)">
+    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(30)" fill="none" stroke="#8b8b8b" stroke-width="1">
+      <circle cx="22.5" cy="22.5" r="22.5" stroke="none"/>
+      <circle cx="22.5" cy="22.5" r="22" fill="none"/>
+    </g>
+    <g id="Komponente_6_2" data-name="Komponente 6 – 2" transform="translate(38 15)">
+      <path id="Pfad_101" data-name="Pfad 101" d="M4.476,14.125" transform="translate(1.822 1.529)" fill="none" stroke="#332a7e" stroke-width="1"/>
+      <path id="Pfad_102" data-name="Pfad 102" d="M18.293,12.629H16.886v2.814H7.1l-2,2-2-2h-1.7V8.407H8.443V7H0v9.85H2.523L5.1,19.428,7.679,16.85H18.293Z" transform="translate(0 -1.371)" fill="#1c0d4b"/>
+      <path id="Pfad_103" data-name="Pfad 103" d="M21.629,8.629H20.221V4.407H16V3h5.629Z" transform="translate(6.514 -3)" fill="#e45d65"/>
+      <path id="Pfad_104" data-name="Pfad 104" d="M23.886,10.036v1.407h-1.7l-2,1.995-2-1.995H8.407V4.407h9.85V3H7v9.85H17.614l2.578,2.577L22.77,12.85h2.523V10.036Z" transform="translate(2.85 -3)" fill="#1c0d4b"/>
+    </g>
+  </g>
+</svg>

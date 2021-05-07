@@ -1,0 +1,39 @@
+<nav id="mainNav">
+  <a href=""><img src="../../../assets/img/logo.svg" id="logo" /></a>
+  <div id="mainMenu">
+    <div id="leftMenu">
+      <ul>
+        <li id="smallerDeviceLogoWrapper">
+
+          <img src="../../../assets/img/logo.svg" id="smallerDeviceLogo" />
+
+       </li>
+        <li>
+          <a [ngClass]='ngActiveClassRechnungen()' [routerLink]="'/rechnungen'">{{
+            'health-ag.navbar.rechnung' | translate
+          }}</a>
+        </li>
+        <li>
+          <a [ngClass]='ngActiveClassPostfach()' [routerLink]="'/postfach'">{{
+            'health-ag.navbar.postfach' | translate
+          }}</a>
+        </li>
+        <li>
+          <a [ngClass]='ngActiveClassHilfe()' [routerLink]="'/hilfe'">{{
+            'health-ag.navbar.services' | translate
+          }}</a>
+        </li>
+        <li>
+          <a [ngClass]='ngActiveClassProfil()' [routerLink]="'/profil'">{{
+            'health-ag.navbar.profil' | translate
+          }}</a>
+        </li>
+      </ul>
+    </div>
+    <div id="rightMenu">
+      <ul>
+        <li><a (click)="logout()" >Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

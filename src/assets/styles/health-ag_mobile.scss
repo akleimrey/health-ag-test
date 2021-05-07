@@ -1,0 +1,1143 @@
+$darkblue: rgb(28, 13, 75);
+$middleBlue: #28297D;
+$lightblue: #25B8CD;
+
+$lightGrey: rgb(237, 237, 237);
+$middleGrey: #BABABA;
+$darkerGrey: rgb(139, 139, 139);
+
+$orange: #E4A55D;
+$warningRed: #E45D65;
+
+// Mobile View
+@media (max-width: 840px) {
+    body {  
+        margin: 0;
+        .hideForMobile {
+            display: none;
+        }
+        section#mobilePreWelcome {
+            div#mobileWhiteIntroScreen {
+                position: fixed;
+                height: 100vh;
+                width: 100vw;
+                top: 0;
+                z-index: 3;
+                background-color: white;
+                transition: 2s;
+                &.finalState {
+                    opacity: 0;
+                }
+            }
+            img#mobileIntroQuadrat {
+                position: absolute;
+                left: 50%;
+                margin-left: -40px;
+                top: 25vh;
+                transition: 1s;
+                &.firstState {
+                    transform: translateY(70px) rotate(48deg);
+                }
+            }
+            img#mobileIntroFont {
+                width: 250px;
+                left: 50%;
+                margin-left: -120px;
+                position: absolute;
+                top: 70vw;
+                transition: 1.2s;
+                &.firstState {
+                    transform: translateY(40px);
+                }
+            }
+        }
+        section#splashScreen {
+            h2 {
+                font-size: 1.4rem;
+                line-height: 1.1;
+                font-family: "MarkProBold";
+            }
+            img#splashLogo {
+                position: absolute;
+                top: -30px;
+                left: 50%;
+                width: 150px;
+                margin-left: -75px;
+            }
+            img.slideArrow {
+                position: absolute;
+                top: 33%;
+                z-index: 9;
+                &#slideArrowRight {
+                    right: 30px;
+                }
+                &#slideArrowLeft {
+                    left: 30px;
+                }
+            }
+            div#overflowWrapper {
+                overflow-x: hidden;
+                div#splashSliderWrapper {
+                    height: 450px;
+                    position: relative;
+                    width: 220%;
+                    padding-top: 30px;
+                    margin-left: 11.5%;
+                    margin-right: 11.5%;
+                    transition: .7s;
+                    &.slideOneIsActive {
+                        transform: translateX(0%);
+                        div#splashSlideOne {
+                            opacity: 1;
+                        }
+                        div#splashSlideTwo {
+                            transform: skew(0, 10deg) scale(0.89);
+                            opacity: .7;
+                           }     
+                     }
+                    &.slideTwoIsActive {
+                        transform: translateX(-33.3%);
+                       div#splashSlideOne {
+                        transform: skew(0, -10deg) scale(0.89);
+                        opacity: .7;
+                       }
+                       div#splashSlideThree {
+                        transform: skew(0, 10deg) scale(0.89);
+                        opacity: .7;
+                       }
+                    }
+                    &.slideThreeIsActive {
+                        transform: translateX(-66.6%);
+                       div#splashSlideTwo {
+                        transform: skew(0, -10deg) scale(0.89);
+                        opacity: .7;
+                       }
+                       div#splashSlideThree {
+                        transform: none;
+                        opacity: 1;
+                       }
+                    }
+                    div.splashSlide {
+                        height: 350px;
+                        width: 23.3%;
+                        padding: 4%;
+                        position: absolute;
+                        margin-left: 2%;
+                        margin-right: 2%;
+                        transition: 1s;
+                        border-radius: 7px;
+                        &#splashSlideOne {
+                            left: 0;
+                            background-color: white;
+                        }
+                        &#splashSlideTwo {
+                            left: 33.3%;
+                            background-color: $lightblue;
+                            color: white;
+                            text-align: center;
+                        }
+                        &#splashSlideThree {
+                            left: 0;
+                            background-image: url('../../assets/img/clouds.jpg');
+                            background-size: cover;
+                        }
+                        &#splashSlideThree {
+                            left: 66.6%;
+                        }
+                    }
+                }
+                div#sliderButtons {
+                    text-align: center;
+                    div.sliderButton {
+                        background-color: white;
+                        width: 25px;
+                        align-content: center;
+                        margin: 0 auto;
+                        height: 25px;
+                        display: inline-block;
+                        margin-right: 10px;
+                        margin-left: 10px;
+                        border-radius: 50%;
+                        background-color: white;
+                        border: 3px solid $lightblue;
+                        &.active {
+                            background-color: $lightblue;
+                        }
+                    }
+                }
+            }
+            div.button {
+                margin-left: 1%;
+            }
+        }
+        #registerWithAccount, #registerWithAccount2, #registerWithAccount3, #registerWithAccount4 {
+            padding-top: 0;  
+            background-color: white;
+            div#loginArea {
+                padding: 0;
+                #reportViolationArea {
+                    img {
+                        width: 80px;
+                        margin-top: 0;
+                    }
+                }
+            }
+            h1 {
+                color: $darkblue;
+                margin-top: -30px;
+            }     
+            div.blueBox {
+                padding: 5%;
+                width: 90%;
+            }     
+        }
+        #registerWithAccount2 {
+            div#loginArea {
+                width: 90%;
+                input {
+                    width: 90%;
+                }
+            }
+            div.button {
+                margin-bottom: 50px !important;  
+            }
+        }
+        #registerWithAccount4 {
+            #registerAccountArea {
+                img {
+                    width: 80px;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &#login {
+            padding-top: 0 !important;
+            margin-top: -60px;
+            div#loginArea {
+                padding: 5px;
+                max-height: 378px;
+                margin: 10px;
+                #loginAreaBorder {
+                    width: 95%;
+                    input {
+                        width: 92%;
+                    }
+                    div.loginTypeTab {
+                        min-height: 39px;
+                         vertical-align: top;
+                        width: 44.44%;
+                        padding-left: 8px;
+                        padding-right: 8px;
+                    }
+                }
+                div#loginInfoBox {
+                    position: fixed;
+                    bottom: 20px;
+                    z-index: 9999;
+                    width: 95%;
+                
+                    h3 {
+                        color: white;
+                    }
+                }
+                div.loginPasswordLink {
+                    img.arrow {
+                        display: none;
+                    }
+                    a {
+                        &::after {
+                            content: ' ';
+                            background-color: transparent;
+                            position: absolute;
+                            width: 15px;
+                            height: 20px;
+                            top: 1px;
+                            margin-left: 5px;
+                            background-image: url('../../assets/img/arrow-right.svg');
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                }
+            }
+        }
+        div.button {
+            width: 90% !important;
+        }
+        a.borderedArrowLink {
+            width: 89%;
+        }
+        div#mobileOnlyBackground {
+            display: block;
+            z-index: -1;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            background-color: #E4E4E4 !important;
+            left: 0;
+            top: 0;
+            &.mobileOnlyBackgroundWhite {
+                background-color: white !important;
+            }
+        }
+        .onlyVisibleForMobile {
+            display: block;
+        }
+        #mobileBottomBar {
+            position: fixed;
+            width: 100%;
+            background-color: white;
+            bottom: 0;
+            div.bottomBarIconWrapper {
+                width: 25%;
+                display: inline-block;
+                text-align: center;
+                p {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    font-size: 0.75rem; 
+                    font-family: "MarkProBold";
+                    color: $darkerGrey;
+                }
+                img {
+                    margin-top: 12px;
+                }
+            }
+        }
+        h4 {
+            font-size: .7rem;
+        }
+        #mainNav {
+            display: none;
+        }
+        div#mobileOnlyBackgroundRechnungen {
+            display: block;
+            z-index: -1;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            background-color: #E4E4E4 !important;
+            left: 0;
+            top: 0;
+        }
+        .fixedTopSubPage {
+            background-color: white;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            h1 {
+                color: $darkblue;
+                text-align: left;
+                margin-left: 10px;
+            }
+        }
+        body#loginPwdRecovery {
+            height: 100vh;
+            padding-top: 0;
+            a.borderedArrowLink {
+                position: fixed;
+                bottom: 20px;
+                width: 77%;
+            }
+            #pwdRecoveryArea {
+                margin-top: 0 !important;
+            }
+            h1 {
+                text-align: center;
+            }
+        }
+    
+        img.subPageIcon {
+            display: none;
+        }
+        section.subPage {
+            padding-top: 40px;
+           div#helpBox {
+               .helpBoxTelNr {
+                margin-left: 74px;
+                font-size: 1.4rem;
+               }
+               .helpBoxForm {
+                margin-left: 74px;
+                margin-top: 0;
+                font-size: 1.4rem;
+               }
+               img#phoneIcon {
+                   left: 50px;
+                   top: 117px;
+               }
+               .helpBoxTime {
+                text-align: left;
+                margin-left: 75px;
+                margin-top: 0;
+                font-size: 0.9rem;
+               }
+               img#mailIcon {
+                left: 50px;
+                top: 188px;
+            }
+           }
+            &#downloadSubpage {
+                div.downloadSubpageContent {
+                    width: 95%;
+                    ul.lineList {
+                        a {
+                            li {
+                                span {
+                                    margin-left: 0;
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            #faqAccordion {
+                padding: 10px;
+                .accordion {
+                    padding-right: 60px;
+                }
+            }
+        }
+
+        section#sendMessage {
+            form#newMessage {
+                input, textarea {
+                    width: 90%; 
+                }
+                span.dropdown-btn {
+                    width: 90% !important;
+                }
+                a.borderedArrowLink {
+                    text-align: left;
+                    width: 83%;
+                    left: 3%;
+                }
+            }
+            img.sendButton {
+                bottom: 20px;
+                position: fixed;
+            }
+            img {
+                &.headerImage {
+                    display: none;
+                }
+            }
+        }
+        section#messageAttachment {
+            app-uploadfile {
+                display: none;
+            }
+            p {
+                width: 80%;
+                margin: auto;
+                line-height: 1.5;
+            }
+            div.button {
+                position: fixed;
+                bottom: 20px;
+                left: 3.5%;
+            }
+        }
+        div#postfach {
+            #postfachRouterView {
+                margin-top: 90px;
+                div#postfachEingang {
+                    div.postfachEingangMail {
+                        div.mailDate {
+                            left: 65% !important;
+                            width: 20%;
+                            display: inline-block;
+                        }
+                        div.mailNew {
+                            text-align: right;
+                            width: 39%;
+                            span {
+                                font-family: "MarkProReg";
+                            }
+                        }
+                        div.mailComponentWrapper {
+                            padding: 0px 10px;
+                            span.mailSubject {
+                                font-family: "MarkProReg";
+                            }
+
+                        }
+                        div.mailAbsender {
+                            width: 70%;
+                        }
+                    }
+                }
+            }
+            #postfachFilter {
+                margin-left: 10px;
+            }
+            div#fixedTop {
+                background-color: transparent;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                h1 {
+                    text-align: center;
+                }
+            }
+
+            div.oneFifth {
+                width: 28.2%;
+                div.postfachNavigationButton {
+                    background-color: $lightGrey;
+                    &.active {
+                        background-color: white;
+                    }
+                }
+                &.searchWrapper {
+                    position: absolute;
+                    right: 10px;
+                    width: 12.5%;
+                    
+                    div.searchButton {
+                        background-color: white !important;
+                        img {
+                            margin-left: -10px;
+                        }
+                        input {
+                            display: none;
+                        }
+                    }
+                }
+                &.newMessageWrapper {
+                    position: fixed;
+                    bottom: 5vh;
+                    right: 25px;
+                    width: 150px;
+                    div.newMessageButton {
+                        border-radius: 15px;
+                        background-color: $lightblue;
+                        text-align: left;
+                        padding-left: 10px;
+                        font-family: "MarkProBold";
+                        #linkArrow {
+                            right: 9px;
+                            top: 14px;
+                        }
+                    }
+                }
+            
+            }
+            #postfachRouterView {   
+                background-color: transparent;
+                div#postfachEingang {
+                    div.postfachEingangMail {
+                        background-color: white;
+                        padding-top: 9px;
+                        margin-bottom: 10px;
+                        width: 94.5%;
+                        padding-top: 15px;
+                        margin-left: 10px;
+                        &:after {
+                            content: none;
+                        }
+                        div.mailComponentWrapper {
+                            span {
+                                &.mailPreview {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        section#welcome {
+            margin-top: -20px;
+            margin: 20px;
+            div#mobileProfileLink {
+                position: absolute;
+                right: 0px;
+                top: -13px;
+                p {
+                    color: white;
+                    margin-top: 0;
+                }
+            }
+            div.welcomeTileWrapper {
+                max-width: 50%;
+                margin-right: 0;
+                margin-bottom: 0;
+                height: 170px;
+                &.imageTileWrapper {
+                    display: none;
+                }
+                div.welcomeTile {
+                    margin-right: 0;
+                    p, h2, h3, h4, h5 {
+                        text-align: left;
+                        position: relative;
+                        margin: 0;
+                        top: auto;
+                        padding: 20px;
+                        font-size: .9rem;
+                    }
+                    p {
+                        line-height: 1.4;
+                        font-size: .9rem;
+                    }
+                    a {
+                        font-size: .9rem;
+                    }
+                    &.mobileLightBlueBackground {
+                        background-color: $lightblue;
+                    }
+                    &.mobileGreyBackground {
+                        background-color: $middleGrey;
+                    }
+                    &.moreTextTile {
+                        p, h2, h3, h4, h5 {
+                            text-align: left;
+                            position: relative;
+                            margin: 0;
+                            top: auto;
+                            width: 80%;
+                            font-size: .9rem;
+                        }
+                        p {
+                            padding-top: 0;
+                            line-height: 1.1;
+                            font-size: .9rem;
+                        }
+                    }
+                    img.tileIcon {
+                        display: none;
+                    }
+                    h1 {
+                        margin-top: 0;
+                        text-align: left;
+                    }
+                }
+            }
+            div#messageTile {
+                top: 0;
+                width: 100%;
+                max-width: none;
+                height: 100px;
+                div.welcomeTile {
+                    background-color: transparent;
+                }
+            }
+            
+        }
+        section#hilfeUndServices {
+            padding-bottom: 0;
+        }
+        section#downloads {
+            padding-bottom: 0;
+            a.borderedArrowLink.borderedArrowLinkWithIcon {
+                padding-left: 53px;
+                width: 87%;
+            }
+        }
+        div#rechnungen {
+            margin: 8px;
+            h1 {
+                color: $darkblue;
+            }
+            div#fixedTop {
+                background-color: #E4E4E4;
+                top: 0;
+                padding-bottom: 10px;
+                left: 10px;
+                z-index: 9999999;
+            }
+            div#filterBox {
+                width: 16%;
+                img {
+                    margin-left: 4px;
+                    margin-top: 6px;
+                }
+                div#filter {
+                    span {
+                        display: none;
+                    }
+                    img {   
+                        right: 11px;
+                        top: 12px;
+                    }
+                }
+            }
+            #installmentList {
+                &.filterDisplayed {
+                    margin-top: 230px;
+                }
+            }
+            div#payInInstallmentBox {
+                width: 100%;
+                div#payInInstallment {
+                    height: 70px;
+                    h3 {
+                        font-size: 1.1rem;
+                        margin-bottom: 0;
+                        margin-top: 0;
+                    }  
+                    div.button {
+                        width: 34% !important;
+                        margin-top: 10px;
+                        line-height: 1.1;
+                        padding: 10px;
+                        height: auto;
+                        padding-left: 25px;
+                        font-size: 0.9rem;
+                        text-align: left;
+                        padding-right: 50px;
+                        img {
+                            right: 15px;
+                            top: 12px;
+                        }
+                    }
+                }
+            }
+            div#invoiceCounterBox {
+                display: none;
+            }
+            div#searchAreaBox {
+                width: 84%;
+                margin-top: 10px;
+                #searchArea {
+                    margin-right: 10px;
+                }
+            }
+            div#filterBox {
+                margin-top: 10px;
+            }
+            #installmentList {
+                margin-top: 180px;
+                div.listedInstallment {
+                    position: relative;
+                    margin: 2px;
+                    margin-bottom: 20px;
+                    p {
+                        font-size: .7rem !important;        
+                    }
+                    div.installmentImage, div.installmentDate, div.installmentTitle, div.installmentStatus {
+                        float: none;
+                        position: absolute;
+                    }
+                    div.installmentImage {
+                        div.greyCircle {
+                            width: 30px;
+                            height: 30px;
+                            margin-left: 10px;
+                            margin-top: 10px;
+                            img#chainSymbolInvoice {
+                                position: absolute;
+                                left: 4px;
+                                top: 3px;
+                            }
+                        }
+                    }
+                    div.installmentDate {
+                        left: 0;
+                        width: 60%;
+                        h4 {
+                            margin-top: 10px;
+                        }
+                        h4, p {
+                            margin-left: 60px;
+                        }
+                        p.invoiceNumber {
+                            position: absolute;
+                            margin-left: 60px;
+                        }
+                        p.moreDetailLink {
+                            top: 75px;
+                            position: absolute;
+                            margin-left: 10px;
+                            z-index:999;
+                        }
+                    }
+                    div.installmentStatus {
+                        right: 0;
+                        width: 50%;
+                        img {
+                            right: 10px;
+                            top: 10px;
+                            width: 16px;
+                        }
+                        h4 {
+                            margin-right: 35px;
+                            margin-top: 12px;
+                        }
+                        h4.paymentInfo {
+                            margin-top: 24px;
+                            margin-right: 10px;
+                            margin-right: 10px;
+                            span.paymentNumber {
+                                font-size: 1.2rem;
+                            }
+                            span.paymentState {
+                                font-size: 0.7rem;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                    div.installmentTitle {
+                        width: 100%;
+                        text-align: left;
+                        h4 {
+                            margin-left: 10px;
+                            width: 47%;
+                            margin-top: 58px;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                        }
+                        p.invoiceWarningMessage {
+                            margin-left: 10px;
+                            right: 10px;
+                            bottom: 10px;
+                            position: absolute;
+                        }
+                    }
+                    div.paymentNumber {
+                        h4 {
+                            span.paymentNumber {
+                                font-size: 1.2rem;
+                            }
+                        }   
+                    }
+                }
+            }
+        }
+        
+        div#rechnungDetail {
+            margin-top: -62px;
+            &.gemeinsameRatenzahlung {
+                margin-top: -77px;
+                div#rightAreaPaymentDetail {
+                    div.greyBackground {
+                        div.tabContent {
+                           margin-top: 0;
+                        }
+                    }
+                }
+            }
+            h1 {
+                display: none;
+            }
+            img.navigationIcon {
+                position: absolute;
+                margin-top: -129px;
+                left: 20px;
+            }
+            div#mobileIntro {
+                display: block;
+                background-color: $lightblue;
+                color: white;
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-top: 30px;
+                height: 140px;
+                text-align: center;
+                h2 {
+                    margin-bottom: 5px;
+                    margin-top: 10px;
+                }
+                img {
+                    margin-top: 4px;
+                }
+            }
+            div.halfSubPageLeftWrapper, div.halfSubPageRightWrapper {
+                float: none;
+                width: 100%;
+            }
+            div.halfSubPageRightWrapper {
+                div.wrapperContent {
+                    padding-right: 0;
+                    padding: 0;
+                    padding-bottom: 0;
+                    
+                }
+            }
+            div.halfSubPageLeftWrapper {
+                div.wrapperContent {
+                    padding: 10px;
+                    padding-bottom: 0;
+                    
+                }
+            }
+            a.borderedArrowLink {
+                width: 88%;
+            }
+            section {
+                div#leftAreaInvoiceDetail {
+                    a.borderedArrowLink {
+                        width: 89%;
+                    }
+                    div.jointlyInvoicePart {
+                        padding: 5px 5px;
+                        height: 110px;
+                        h3.jointlyInvoiceDoctorsName {
+                            width: 60%;
+                            margin-top: 18px;
+                            padding-left: 10px;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                        
+                        }
+                        div.jointlyInvoiceState {
+                            position: absolute;
+                            right: 30px;
+                            top: 5px;
+                            h3 {
+                                margin-top: 5px;
+                            }
+                            img {
+                                top: 0px;
+                            }
+                        }
+                        div.checkboxInformation {
+                            left: 60px;
+                            h3 {
+                                margin-top: 5px;
+                            }
+                        }
+                        img.jointlyInvoiceCheckbox {
+                            width: 40px;
+                            margin-left: 5px;
+                            margin-top: 0;
+                        }
+                        div.jointlyInvoicePrice {
+                            position: absolute;
+                            right: 10px;
+                            bottom: 10px;
+                        }
+
+                    }
+                    div#statusIcon {
+                        margin-right: 20px;
+                        img {
+                            right: -18px;
+                        }
+                    }
+                }
+            }
+            div#rightAreaPaymentDetail {
+                div.greyBackground {
+                    padding: 10px 20px;
+                    div#choosePaymentMethodSwitch {
+                        h3 {
+                            padding: 0px 10px;
+                            font-size: .8rem;
+                        }
+                    }
+                    div#payNowForm {
+                        font-size: .8rem;
+                    }
+                    a.borderedArrowLink {
+                        width: 100%;
+                        
+                    }
+                    div#processingFee {
+                        img.infoIcon {
+                            top: 16px;
+                            right: 37px;
+                        }
+                    }
+                    div.paymentTab {
+                        position: absolute;
+                        width: 49.6%;
+                        padding: 20px 0;
+                        &#payInRatesTab {
+                            left: 0;
+                        }
+                        &#payNowTab {
+                            right: 0;
+                        }
+                    }
+                    div.tabContent {
+                        margin-top: 110px;
+                        div#payPerLastschrift {
+                            div.inputField {
+                                label {
+                                    font-size: .7rem;
+                                    vertical-align: top;
+                                }
+                                p {
+                                    line-height: 1;
+                                    font-size: .8rem;
+                                    margin-top: -25px;
+                                }
+                            }
+                        }
+                    }
+
+                    div#choosePaymentMethodSwitch {
+                        margin-top: 90px;
+                    }
+                }
+            }
+
+            div.invoiceFurtherOptions {
+                padding-bottom: 100px;
+                h3 {
+                    margin-bottom: 20px;
+                }
+                div.wrapperContent {
+                    padding-top: 0;
+                }
+            }
+           
+        }
+        section#invoiceDelay {
+            min-height: 82vh !important;
+            a.button {
+                position: fixed;
+                bottom: 20px;
+                left: 15px;
+            }
+            h1 {
+                text-align: center;
+            }
+            h3 {
+                max-width: 150px;
+                margin: auto;
+            }
+        }
+        div.mobileHeadingCenter {
+            h1 {
+                text-align: center;
+            }
+
+        }
+        section.subPage#ratenzahlung, section#vorzeitigAbloesen2, section#vorzeitigAbloesen3 {
+            margin-top: -145px;
+            overflow-x: hidden;
+            h1.textDarkBlue {
+               width: auto;
+            }
+            h4 {
+                font-size: 0.9rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+                margin-top: 0;
+            }
+            div.greyBackground {
+                width: 90%;
+                margin-bottom: 30px;
+            }
+            div.halfSubPageLeftWrapper, div.halfSubPageRightWrapper {
+                width: 100%;
+            }
+        }
+        section#profil {
+            img.headerImage {
+                margin-top: 0;
+                width: 90px;
+                margin-bottom: 20px;
+            }
+            div.borderedHeadline {
+                width: 90%;
+            }
+            #fixedTop {
+                h1 {
+                    text-align: center;
+                }
+            }
+            div.profileData {
+                margin: 10px 5%;
+                width: 90%;
+                img.editDataIcon {
+                    top: 15px;
+                }
+                div.dataName {
+                    text-align: left;
+                    width: 100%;
+                }
+                div.dataValue {
+                    width: 100%;
+                    padding-left: 0;
+                }
+                label.switch {
+                    margin-top: 20px;
+                }
+            }
+        }
+        #pwdInfo {
+            h1 {
+                text-align: center;
+            }
+            #emailRecoveryArea {
+                margin-top: 0 !important;
+            }
+        }
+        #invoiceFilter {
+            div.invoiceCopy.button {
+                position: fixed;
+                bottom: 20px;
+                left: 3.5%;
+            }
+            h1 {
+                margin-top: 40px;
+                margin-bottom: 0;
+            }
+        }
+        #reportViolation {
+            margin-top: -60px !important;
+            h1 {
+                text-align: center;
+            }
+            div#loginArea {
+                padding: 0 !important;
+                p {
+                    width: 70%;
+                    padding: 25px;
+                    margin: auto;
+                }
+                
+            }
+           
+            div#reportViolationArea {
+                margin-top: 0px !important;
+                img#symbol {
+                    width: 90px;
+                }
+            }
+        }
+        #loginEmailRecovery {
+            h1 {
+                text-align: center
+            }
+        }
+        div.greyBox {
+            ul {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+        }
+        div#invoiceFilter {
+            margin-top: -70px;
+            h1 {
+                text-align: left;
+                margin-left: 5%;
+                color: #1c0d4b;
+            }
+            section.subPage {
+                padding-top: 0;
+                div.select-filter-options {
+                    width: 100%;
+                    div.option-wrapper {
+                        margin-left: 5%;
+                    }
+                }
+                div.outer-wrapper {
+                    p {
+                        text-align: left;
+                    }
+                    
+                }
+            }
+        }
+    }    
+}

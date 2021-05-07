@@ -1,0 +1,38 @@
+.pill-input {
+  flex: 0 0 auto;
+  padding: 0 .5em 0 .75em;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  max-width: 95%;
+  margin-bottom: .25em;
+  background-color: #25B8CD;
+  color: white;
+
+  &:not(:last-child) {
+    margin-right: .5em;
+  }
+
+  &.focus {
+    color: white;
+    background-color: rgb(101, 91, 243);
+
+    > .delete:hover {
+      background-color: rgb(101, 91, 243);
+    }
+  }
+
+  > .delete {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: .25em .5em;
+
+    &:hover {
+      background-color: rgba(white, 0.8);
+      color: white;
+    }
+  }
+}

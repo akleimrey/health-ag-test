@@ -1,0 +1,26 @@
+<section id="splashScreen">
+    <img src="../../../assets/img/logo-white.svg" id="splashLogo"/>
+    <img src="../../../assets/img/slider-right.svg" id="slideArrowRight" class="slideArrow"/>
+    <img src="../../../assets/img/slider-left.svg" id="slideArrowLeft" class="slideArrow"/>
+    <div id="overflowWrapper">
+        <div id="splashSliderWrapper" class="slideTwoIsActive">
+            <div class="splashSlide" id="splashSlideOne">
+                <h2>SLIDE 1</h2>
+            </div>
+            <div class="splashSlide" id="splashSlideTwo">
+                <h2>Alles gut überstanden? Wir helfen Ihnen gerne mit Ihrer Rechnung.</h2>
+                <h3>ihre Vorteile:</h3>
+                <p>Sofort oder in Raten zahlen Rechnungskopie erhalten Hilfe bei der Kassenerstattung</p>
+            </div>
+            <div class="splashSlide" id="splashSlideThree">
+                <h2>SLIDE 2</h2>
+            </div>
+        </div>
+        <div id="sliderButtons">
+            <div id="sliderButtonOne" class="sliderButton"></div>
+            <div id="sliderButtonTwo" class="sliderButton active"></div>
+            <div id="sliderButtonThree" class="sliderButton"></div>
+        </div>
+        <div [routerLink]="'/'" class="button">Weiter zur Bezahlung</div>
+    </div>
+</section>

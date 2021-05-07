@@ -1,0 +1,18 @@
+<div id="fixedTop" class="fixedTopSubPage mobileHeadingCenter">
+  <h1>Kontodaten ändern</h1>
+</div>
+<section id="editBankAccount" class="subPage editDataPage">
+  <div id="mobileOnlyBackground" class="mobileOnlyBackgroundWhite"></div>
+  <img src="../../../assets/img/navigation-back.svg" class="navigationIcon" />
+  <img src="../../../assets/img/new-message.svg" class="headerImage" />
+
+  <form [formGroup]="editBankaccountForm">
+    <div class="inputFieldArea">
+      <input formControlName="accountHolder" id="name" placeholder="Vollständiger Name" />
+      <input formControlName="iban" id="iban" placeholder="IBAN" />
+      <input formControlName="bic" id="bic" placeholder="BIC" />
+
+      <div (click)="saveChanges(editBankaccountForm.value)" class="button">Konto hinzufügen</div>
+    </div>
+  </form>
+</section>

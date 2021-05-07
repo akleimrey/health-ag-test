@@ -1,0 +1,24 @@
+{
+	"health-ag": {
+		"navbar": {
+			"logout": "Logout",
+			"postfach": "Mail",
+			"profil": "Profile",
+			"rechnung": "Invoices",
+			"services": "Help & Services"
+		},
+		"rechnungen": {
+			"bezahl_status_bezahlt": "Paid",
+			"bezahl_status_in_zahlung": "In payment",
+			"bezahl_status_offen": "Open",
+			"bezahl_status_ueberfaellig": "Overdue",
+			"header": "Invoices",
+			"intro": "Pay bills conveniently together in one installment.",
+			"rechnung_start_info": "More information...",
+			"rechnungen_bezahlt": "Paid bills",
+			"rechnungen_offen": "Open invoices",
+			"rechnungen_ratenzahlungen": "joint installment payments",
+			"start_button": "Start now"
+		}
+	}
+}

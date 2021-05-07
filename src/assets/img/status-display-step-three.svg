@@ -1,0 +1,45 @@
+<svg id="Ablauf_Nummern_Eckig" data-name="Ablauf Nummern Eckig" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="184" height="35" viewBox="0 0 184 35">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Coral_Box" data-name="Coral Box" width="35" height="35" transform="translate(2.275 0.362)" fill="#25b8cd"/>
+    </clipPath>
+  </defs>
+  <line id="linie_grau" data-name="linie grau" x2="149" transform="translate(17.5 17.5)" fill="none" stroke="#bababa" stroke-width="3"/>
+  <line id="linie_coral" data-name="linie coral" x2="167" transform="translate(13.5 17.5)" fill="none" stroke="#25b8cd" stroke-linecap="round" stroke-width="6"/>
+  <g id="Zahlenbox">
+    <g id="graue_Box" data-name="graue Box" fill="#fff" stroke="#bababa" stroke-width="2">
+      <rect width="35" height="35" stroke="none"/>
+      <rect x="1" y="1" width="33" height="33" fill="none"/>
+    </g>
+    <rect id="dunkler_Punkt" data-name="dunkler Punkt" width="5" height="5" transform="translate(30 15)" fill="#1c0d4b" opacity="0"/>
+    <g id="coral_box-4" data-name="coral box" transform="translate(-2.275 -0.362)" clip-path="url(#clip-path)">
+      <path id="coral_rund" data-name="coral rund" d="M20.5-.362C31.822-.362,41,7.835,41,17.5S31.822,35.412,20.5,35.412c-6.408,0-25.078.09-34.605-.412-.334-10.12-1.17-31.167-1.17-35.362C-11.264-.279,9.178-.362,20.5-.362Z" transform="translate(15.275 0.362)" fill="#25b8cd"/>
+      <text id="_1" data-name="1" transform="translate(40.275 23.779)" fill="#fff" font-size="17" font-family="MarkPro-Bold, Mark Pro" font-weight="700" opacity="0"><tspan x="-3.489" y="0">1</tspan></text>
+    </g>
+    <rect id="weisser_Punkt" data-name="weisser Punkt" width="5" height="5" transform="translate(15 15)" fill="#fff"/>
+  </g>
+  <g id="Zahlenbox-2" data-name="Zahlenbox" transform="translate(75)">
+    <g id="graue_Box-2" data-name="graue Box" fill="#fff" stroke="#bababa" stroke-width="2">
+      <rect width="35" height="35" stroke="none"/>
+      <rect x="1" y="1" width="33" height="33" fill="none"/>
+    </g>
+    <rect id="dunkler_Punkt-2" data-name="dunkler Punkt" width="5" height="5" transform="translate(30 15)" fill="#1c0d4b" opacity="0"/>
+    <g id="coral_box-5" data-name="coral box" transform="translate(-2.275 -0.362)" clip-path="url(#clip-path)">
+      <path id="coral_rund-2" data-name="coral rund" d="M20.5-.362C31.822-.362,41,7.835,41,17.5S31.822,35.412,20.5,35.412c-6.408,0-25.078.09-34.605-.412-.334-10.12-1.17-31.167-1.17-35.362C-11.264-.279,9.178-.362,20.5-.362Z" transform="translate(15.275 0.362)" fill="#25b8cd"/>
+      <text id="_2" data-name="2" transform="translate(40.275 23.779)" fill="#fff" font-size="17" font-family="MarkPro-Bold, Mark Pro" font-weight="700" opacity="0"><tspan x="-4.786" y="0">2</tspan></text>
+    </g>
+    <rect id="weisser_Punkt-2" data-name="weisser Punkt" width="5" height="5" transform="translate(15 15)" fill="#fff"/>
+  </g>
+  <g id="Zahlenbox-3" data-name="Zahlenbox" transform="translate(149)">
+    <g id="graue_Box-3" data-name="graue Box" fill="#fff" stroke="#bababa" stroke-width="2">
+      <rect width="35" height="35" stroke="none"/>
+      <rect x="1" y="1" width="33" height="33" fill="none"/>
+    </g>
+    <rect id="dunkler_Punkt-3" data-name="dunkler Punkt" width="5" height="5" transform="translate(30 15)" fill="#1c0d4b" opacity="0"/>
+    <g id="coral_box-6" data-name="coral box" transform="translate(-2.275 -0.362)" clip-path="url(#clip-path)">
+      <path id="coral_rund-3" data-name="coral rund" d="M20.5-.362C31.822-.362,41,7.835,41,17.5S31.822,35.412,20.5,35.412c-6.408,0-25.078.09-34.605-.412-.334-10.12-1.17-31.167-1.17-35.362C-11.264-.279,9.178-.362,20.5-.362Z" transform="translate(15.275 0.362)" fill="#25b8cd"/>
+      <text id="_3" data-name="3" transform="translate(20.275 23.779)" fill="#fff" font-size="17" font-family="MarkPro-Bold, Mark Pro" font-weight="700"><tspan x="-4.862" y="0">3</tspan></text>
+    </g>
+    <rect id="weisser_Punkt-3" data-name="weisser Punkt" width="5" height="5" transform="translate(0 15)" fill="#fff" opacity="0"/>
+  </g>
+</svg>

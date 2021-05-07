@@ -1,0 +1,65 @@
+<body id="registerWithAccount2" class="LoginSubPage">
+  <div id="mobileOnlyBackground" class="mobileOnlyBackgroundWhite"></div>
+  <h1>Mit Benutzerkonto registrieren</h1>
+  <div id="loginArea">
+    <form #registerAccountForm="ngForm">
+      <div id="registerAccountArea">
+        <img src="../../../assets/img/profile.svg" />
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor.
+        </p>
+        <input ngModel name="email" placeholder="E-Mail-Adresse" />
+        <a href="#" class="borderedArrowLink borderedArrowLinkWithIcon"
+          ><img
+            src="../../../assets/img/rechnung-grey.svg"
+            class="borderedArrowLinkIcon"
+          />
+          AGB/Nutzungsbedingungen
+        </a>
+        <a
+          style="margin-top: -1px"
+          href="#"
+          class="borderedArrowLink borderedArrowLinkWithIcon"
+          ><img
+            src="../../../assets/img/rechnung-grey.svg"
+            class="borderedArrowLinkIcon"
+          />
+          Datenschutzinformationen</a
+        >
+        <div class="einwilligungBordered">
+          <div class="paragraphArea">
+            <p>
+              Ich willige in die Verarbeitung meiner Daten zum Zweck der
+              Erstellung eines Zugriffs auf das Patientenportal ein (und habe
+              die Daten-schutzhinweise zur Kenntnis genommen)“
+            </p>
+          </div>
+          <div class="switchArea" style="margin-top: 40px">
+            <label class="switch"
+              ><input type="checkbox" ngModel name="dataPrivacy" id="getInvoicesDigitally" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div class="einwilligungBordered">
+          <div class="paragraphArea">
+            <p>Ich habe die AGB zur Kenntnis genommen</p>
+          </div>
+          <div class="switchArea">
+            <label class="switch"
+              ><input type="checkbox" ngModel name="termsAndConditions" id="getInvoicesDigitally" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+
+        <div (click)="createRegistrationRequest(registerAccountForm.value)" class="button">Zugang beantragen</div>
+
+        <!-- <a [routerLink]="'../step-3'"
+          ></a
+        > -->
+      </div>
+    </form>
+  </div>
+</body>

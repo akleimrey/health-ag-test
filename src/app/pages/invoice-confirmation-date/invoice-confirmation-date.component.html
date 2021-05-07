@@ -1,0 +1,30 @@
+<div id="fixedTop">
+  <h1>Ratenzahlung</h1>
+</div>
+
+<section id="vorzeitigAbloesen2" class="subPage">
+  <img src="../../../assets/img/navigation-back.svg" class="navigationIcon">
+  <h3>Bezahlung</h3>
+  <img src="../../../assets/img/status-display.svg" />
+  <h2>Wie möchten Sie Ihre Raten bezahlen?</h2>
+  <div class="greyBackground">
+    <h3>Per Lastschrift</h3>
+    <span>Fälig zum: <strong>01. des Monats</strong></span>
+
+    <input
+      class="slider"
+      type="range"
+      min="0"
+      max="100"
+      value="50"
+      step="1"
+      id="rateSlider"
+    />
+
+    <input type="text" placeholder="Kontoinhaber eingeben" />
+    <input type="text" placeholder="IBAN eingeben" />
+    <input type="text" placeholder="BIC eingeben" />
+  </div>
+
+  <a [routerLink]="'/ratenzahlung/debit-confirm'"><div class="button">Weiter</div></a>
+</section>

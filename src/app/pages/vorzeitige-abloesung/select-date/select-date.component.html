@@ -1,0 +1,41 @@
+<section id="vorzeitigAbloesen" class="subPage">
+  <div id="calendarWrapper">
+    <h3>
+      Wählen Sie das Datum aus, an dem der Restbetrag gezahlt werden soll:
+    </h3>
+    <input
+      #datePicker
+      class="datePicker"
+      type="text"
+      id="basicDatePicker"
+      placeholder="Please select Date Time"
+      data-input
+    />
+
+    <div class="greyBackground">
+      <table cellspacing="0" cellpadding="0">
+        <tr>
+          <td>Ablösedatum</td>
+          <td>15.10.2021</td>
+        </tr>
+        <tr>
+          <td>Restsumme</td>
+          <td>353,74 €</td>
+        </tr>
+        <tr>
+          <td>Restzinsen</td>
+          <td>- 57 €</td>
+        </tr>
+
+        <tr id="abloeseSumme">
+          <td>Ablösesumme</td>
+          <td>296,7 €</td>
+        </tr>
+      </table>
+    </div>
+
+    <a [routerLink]="'../bezahlung/'"
+      ><div class="button">Vorzeitig ablösen</div></a
+    >
+  </div>
+</section>

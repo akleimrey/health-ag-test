@@ -1,0 +1,86 @@
+<ng-container *ngIf="!_isResponseToMessage; else isResponse">
+  <div id="fixedTop" class="">
+    <h1>Unsere Nachricht an Sie</h1>
+  </div>
+  <section id="sendMessage" class="subPage subPagenachrichtAnSie">
+    <form id="newMessage">
+      <input
+        placeholder="Betreff"
+        [value]="_message.messageSubject"
+        disabled
+        id="betreffMessage"
+        style="font-family: 'MarkProBold'; color: black"
+      />
+
+      <input
+        placeholder="Rechnungs-Nummer"
+        [value]="_message.invoiceReferences"
+        disabled
+        id="betreffMessage"
+      />
+
+      <div
+        class="custom-textfield"
+        contenteditable="false"
+        style="resize: none; text-align: left"
+      >
+        <p>{{ _message.messageBody }}</p>
+      </div>
+    </form>
+
+    <img
+      (click)="switchToResponse()"
+      src="../../../assets/img/respond.svg"
+      class="sendButton"
+    />
+
+    <div id="archiveButton">
+      <img src="../../../assets/img/archiveIcon.svg" class="archiveButton" />
+    </div>
+  </section>
+</ng-container>
+
+<ng-template #isResponse>
+  <div id="fixedTop" class="">
+    <h1>Ihre Antwort an uns</h1>
+  </div>
+  <section id="sendMessage" class="subPage subPageAntwortAnUns">
+    <form [formGroup]="_responseForm" id="newMessage">
+      <input
+        placeholder="Betreff"
+        formControlName="messageSubject"
+        readonly
+        id="betreffMessage"
+        style="font-family: 'MarkProBold'; color: black"
+      />
+
+      <input
+        placeholder="Rechnungs-Referenz"
+        formControlName="invoiceReferences"
+        readonly
+        id="betreffMessage"
+      />
+
+      <div class="custom-textfield" contenteditable="true" style="resize: none">
+
+        <br><br><br>
+
+        <blockquote>
+          {{_message.messageBody}}
+        </blockquote>
+      </div>
+
+      <a
+        class="borderedArrowLink borderedArrowLinkWithIcon"
+        [routerLink]="'/postfach/nachricht-neu/attachment'"
+      >
+        <img
+          src="../../../assets/img/documents.svg"
+          class="borderedArrowLinkIcon"
+        />
+        Dokumente hinzufügen
+      </a>
+    </form>
+    <img (click)="sendMessage()" src="../../../assets/img/respond.svg" class="sendButton" />
+  </section>
+</ng-template>

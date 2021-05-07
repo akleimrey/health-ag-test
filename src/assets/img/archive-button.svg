@@ -1,0 +1,14 @@
+<svg id="Komponente_141_3" data-name="Komponente 141 – 3" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
+  <rect id="Rechteck_54" data-name="Rechteck 54" width="52" height="52" rx="26" fill="#25b8cd"/>
+  <g id="Gruppe_590" data-name="Gruppe 590" transform="translate(4554 -2055)">
+    <path id="Pfad_109" data-name="Pfad 109" d="M4.776,9.727,0,4.931,4.776,0" transform="translate(-4532.5 2084.901) rotate(-90)" fill="none" stroke="#fff" stroke-width="3.5"/>
+    <g id="Rechteck_715" data-name="Rechteck 715" transform="translate(-4540.5 2074)" fill="none" stroke="#fff" stroke-width="3.5">
+      <rect width="26" height="19" stroke="none"/>
+      <rect x="1.75" y="1.75" width="22.5" height="15.5" fill="none"/>
+    </g>
+    <g id="Pfad_594" data-name="Pfad 594" transform="translate(-4540.5 2052.944)" fill="none">
+      <path d="M7.316,13.931H18.844l7.094,7.125v2.429H0V21.056Z" stroke="none"/>
+      <path d="M 8.738674163818359 17.43066024780273 L 6.116508483886719 19.98437881469727 L 19.93200874328613 19.98437881469727 L 17.38949012756348 17.43066024780273 L 8.738674163818359 17.43066024780273 M 7.315969467163086 13.93066024780273 L 18.84375 13.93066024780273 L 25.9375 21.05566024780273 L 25.9375 23.48437881469727 L 0 23.48437881469727 L 0 21.05566024780273 L 7.315969467163086 13.93066024780273 Z" stroke="none" fill="#fff"/>
+    </g>
+  </g>
+</svg>

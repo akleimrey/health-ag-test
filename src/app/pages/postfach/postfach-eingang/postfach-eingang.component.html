@@ -1,0 +1,52 @@
+<div>
+  <div class="fixedWrapper">
+    <section id="postfachRouterView">
+
+
+      <div class="scrollWrapper">
+        <div id="postfachEingang">
+          <div
+            *ngFor="let message of messages"
+            [routerLink]="['/postfach/nachricht', message.id]"
+            class="postfachEingangMail unreadMail">
+            <div class="mailAbsender">
+              <div class="mailComponentWrapper">
+                <span>Health AG Erstattungsservice</span>
+              </div>
+            </div>
+            <div class="mailSubjectAndPreview">
+              <div class="mailComponentWrapper">
+                <span class="mailSubject">{{
+                  message.messageSubject
+                    ? message?.messageSubject
+                    : 'Kein Betreff'
+                }}</span>
+                –
+                <span class="mailPreview">{{
+                  message.messageBody
+                    ? message?.messageBody?.slice(0, 30) + '...'
+                    : 'Keine Vorschau'
+                }}</span>
+              </div>
+            </div>
+            <div *ngIf="!message.messageRead" class="mailNew">
+              <div class="mailComponentWrapper">
+                <span>NEU</span>
+              </div>
+            </div>
+            <div class="mailDate">
+              <div class="mailComponentWrapper">
+                <span>{{ message.created | date }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </section>
+  </div>
+</div>

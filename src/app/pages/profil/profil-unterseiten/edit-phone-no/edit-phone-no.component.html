@@ -1,0 +1,14 @@
+<div id="fixedTop" class="fixedTopSubPage mobileHeadingCenter">
+    <h1>Telefonnummer ändern</h1>
+  </div>
+  <section id="editPhone" class="subPage editDataPage">
+    <form [formGroup]="phoneForm">
+    <div id="mobileOnlyBackground" class="mobileOnlyBackgroundWhite"></div>
+    <img src="../../../assets/img/navigation-back.svg" class="navigationIcon">
+    <img src="../../../assets/img/new-message.svg" class="headerImage"/>
+    <div class="inputFieldArea">
+        <input formControlName="phoneNumber" id="newPhoneNumber" placeholder="Neue Telefonnummer" />
+        <div (click)="saveChanges(phoneForm.value.phoneNumber)" class="button">Telefonnummer ändern</div>
+    </div>
+  </form>
+  </section>

@@ -1,0 +1,28 @@
+<div id="fixedTop" class="fixedTopSubPage">
+  <h1>Ihre Nachricht an uns</h1>
+</div>
+<section id="sendMessage" class="subPage">
+  <img src="../../../assets/img/new-message.svg" class="headerImage" />
+  <form [formGroup]="sendMessageForm" id="newMessage">
+    <input formControlName="messageSubject" placeholder="Betreff" />
+
+    <ng-multiselect-dropdown formControlName="messageInvoiceReferences"
+      [placeholder]="'Wählen eine oder mehrere Rechnungsnummern'"
+      [settings]="dropdownSettings"
+      [data]="dropdownList"
+      (onSelect)="onItemSelect($event)"
+      (onSelectAll)="onSelectAll($event)"
+    >
+    </ng-multiselect-dropdown>
+
+    <textarea class="response-field" formControlName="messageBody" modelname="textBody" placeholder="Ihre Nachricht" style="resize: none"></textarea>
+    <a class="borderedArrowLink borderedArrowLinkWithIcon" [routerLink]="'/postfach/nachricht-neu/attachment'">
+      <img
+        src="../../../assets/img/documents.svg"
+        class="borderedArrowLinkIcon"
+      />
+      Dokumente hinzufügen
+    </a>
+  </form>
+  <img (click)="sendMail(sendMessageForm.value)" src="../../../assets/img/send_button.svg" class="sendButton" />
+</section>

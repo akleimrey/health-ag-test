@@ -1,0 +1,57 @@
+<div id="mobileOnlyBackgroundRechnungen"></div>
+<div id="postfach">
+  <div [hidden]="hideMailbox" id="fixedTop" class="fixedTopSubPage">
+    <h1>Postfach</h1>
+    <section id="postfachFilter">
+      <a [routerLink]="'..'">
+        <img
+          src="../../../assets/img/navigation-back.svg"
+          class="navigationIcon"
+        />
+      </a>
+      <div class="oneFifth searchWrapper">
+        <div class="postfachNavigationButton searchButton">
+          <img src="./../../assets/img/search.svg" />
+          <input placeholder="In Emails suchen" />
+        </div>
+      </div>
+      <div class="oneFifth eingangWrapper">
+        <div
+          [routerLink]="'../postfach/eingang'"
+          [ngClass]="returnActiveOnEingang()"
+          class="postfachNavigationButton"
+        >
+          Eingang
+        </div>
+      </div>
+      <div class="oneFifth">
+        <div
+          [routerLink]="'../postfach/gesendet'"
+          [ngClass]="returnActiveOnGesendet()"
+          class="postfachNavigationButton"
+        >
+          Gesendet
+        </div>
+      </div>
+      <div class="oneFifth">
+        <div
+          [routerLink]="'../postfach/archiv'"
+          [ngClass]="returnActiveOnArchiv()"
+          class="postfachNavigationButton"
+        >
+          Archiv
+        </div>
+      </div>
+      <div class="oneFifth newMessageWrapper">
+        <div
+          [routerLink]="'./nachricht-neu'"
+          class="postfachNavigationButton newMessageButton"
+        >
+          Neue Nachricht
+          <img src="../../../assets/img/arrow-white.svg" id="linkArrow" />
+        </div>
+      </div>
+    </section>
+  </div>
+  <router-outlet></router-outlet>
+</div>

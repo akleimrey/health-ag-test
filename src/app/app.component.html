@@ -1,0 +1,8 @@
+<!-- <div class="page-wrapper"> -->
+  <app-header></app-header>
+  <div [@.disabled]="!isMobile" [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+<!-- </div> -->
+<!-- <router-outlet #outlet="outlet"></router-outlet> -->
+

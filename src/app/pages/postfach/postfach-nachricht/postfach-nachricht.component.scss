@@ -1,0 +1,24 @@
+div.custom-textfield {
+  resize: none;
+  text-align: left;
+  background-color: #f6f7f8;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 20px;
+
+  p {
+    padding-left: 0px;
+  }
+
+  blockquote:first-child {
+    border-left: 3px solid #25B8CD;
+  }
+  blockquote {
+    margin-left: 5px;
+    padding-left: 5px;
+    border-left: 3px solid darkgray;
+    color: gray;
+  }
+}

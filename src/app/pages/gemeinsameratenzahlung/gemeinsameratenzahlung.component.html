@@ -1,0 +1,146 @@
+<div id="rechnungDetail" class="gemeinsameRatenzahlung">
+    <h1>Gemeinsame Ratenzahlung</h1>
+    <section>
+      <div id="mobileIntro" class="onlyVisibleForMobile">
+        <h2>Rechnungen auswählen und unten gemeinsame Rate festlegen.</h2>
+        <img src="../../../assets/img/mobileintro-arrowdown.svg" class="introArrowDown">
+      </div>
+      <img src="../../../assets/img/navigation-back.svg" class="navigationIcon">
+
+      <div id="leftAreaInvoiceDetail" class="halfSubPageLeftWrapper">
+        <div class="wrapperContent">
+          <div appMarkItems [invoiceRef]="invoice" ($itemRefDeselected)="listenToDeselectItemsDirective($event)" class="jointlyInvoicePart">
+            <img src="../../../assets/img/gemeinsam-kreisohnehaken.svg" class="jointlyInvoiceCheckbox"/>
+            <div class="checkboxInformation">
+              <h3>12. Oktober 2020</h3>
+              <small>7255572108</small><br />
+              <small>Mehr Informationen ></small>
+            </div>
+            <div class="jointlyInvoiceState">
+              <h3>Offen</h3>
+              <img src="../../../assets/img/offen.svg" />
+            </div>
+            <div class="jointlyInvoicePrice">
+              <h2>1.500,00 €</h2>
+              <small>fällig in 14 Tagen</small>
+            </div>
+            <h3 class="jointlyInvoiceDoctorsName">Zahnärzte Schmidt-Fleckenstein<br />Hamburg-Altona</h3>
+          </div>
+          <div appMarkItems [invoiceRef]="invoice" ($itemRefDeselected)="listenToDeselectItemsDirective($event)" class="jointlyInvoicePart">
+            <img src="../../../assets/img/gemeinsam-kreisohnehaken.svg" class="jointlyInvoiceCheckbox"/>
+            <div class="checkboxInformation">
+              <h3>12. Oktober 2020</h3>
+              <small>7255572108</small><br />
+              <small>Mehr Informationen ></small>
+            </div>
+            <div class="jointlyInvoiceState">
+              <h3>Offen</h3>
+              <img src="../../../assets/img/offen.svg" />
+            </div>
+            <div class="jointlyInvoicePrice">
+              <h2>1.500,00 €</h2>
+              <small>fällig in 14 Tagen</small>
+            </div>
+            <h3 class="jointlyInvoiceDoctorsName">Zahnärzte Schmidt-Fleckenstein<br />Hamburg-Altona</h3>
+          </div>
+          <div appMarkItems [invoiceRef]="invoice" ($itemRefDeselected)="listenToDeselectItemsDirective($event)" class="jointlyInvoicePart">
+            <img src="../../../assets/img/gemeinsam-kreisohnehaken.svg" class="jointlyInvoiceCheckbox"/>
+            <div class="checkboxInformation">
+              <h3>12. Oktober 2020</h3>
+              <small>7255572108</small><br />
+              <small>Mehr Informationen ></small>
+            </div>
+            <div class="jointlyInvoiceState">
+              <h3>Offen</h3>
+              <img src="../../../assets/img/offen.svg" />
+            </div>
+            <div class="jointlyInvoicePrice">
+              <h2>1.500,00 €</h2>
+              <small>fällig in 14 Tagen</small>
+            </div>
+            <h3 class="jointlyInvoiceDoctorsName">Zahnärzte Schmidt-Fleckenstein<br />Hamburg-Altona</h3>
+
+          </div>
+        </div>
+      </div>
+      <div id="rightAreaPaymentDetail" class="halfSubPageRightWrapper">
+        <div class="wrapperContent">
+          <div class="greyBackground">
+            <h2>Rechnungen links auswählen und gewünschte Ratenhöhe ermitteln.<br />
+              Lorem ipsum dolor sit amet.</h2>
+         
+            <div id="payInRatesContent" class="tabContent tabContentActive">
+              <div id="paymentDuration">
+                Laufzeit: <span><strong>{{currentValue}} Monate</strong></span>
+              </div>
+              <input type="range" (input)="returnValues($event.target.value)" [min]="minMonths" [max]="maxMonths" [value]="currentValue" step="1" list="tickmarks" id="rateSlider">
+              <datalist id="tickmarks">
+                <!-- <option *ngFor="let options of returnOptionSelect()">{{options}}</option> -->
+              </datalist>
+
+              <strong>Rate: </strong><span id="jointlyInvoiceRate">54,30 €</span>
+
+              <div id="interestInfo">
+                <div class="halfSubPageLeft">
+                  <p><strong>0 % </strong>effektiver Jahreszins</p>
+                </div>
+                <div class="halfSubPageLeft">
+                  <p><strong>0 % </strong>fester Sollzinssatz</p>
+                </div>
+              </div>
+              <div style="clear: both;"></div>
+
+              <div id="proessingFee">
+                <a class="borderedArrowLink">Keine Bearbeitungsgebühr</a>
+              </div>
+              <div [routerLink]="'./details'" class="button">Ratenzahlung beantragen</div>
+            </div>
+            <div id="payNowContent" class="tabContent">
+              <div id="choosePaymentMethodSwitch">
+                <h3>Per Überweisung</h3>
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                  <h3>Per Lastschrift</h3>
+              </div>
+
+              <div id="payNowForm">
+                <div class="inputField">
+                  <label>Kontoinhaber: </label> <input type="text" />
+                </div>
+                <div class="inputField">
+                  <label>IBAN: </label><input type="text" />
+                </div>
+                <div class="inputField">
+                  <label>BIC: </label><input type="text" />
+                </div>
+                <div class="inputField">
+                  <label>Kontoinhaber: </label> in
+                </div>
+              </div>
+              <div class="button">Rechnung per Überweisung bezahlen</div>
+            </div>
+          </div>
+          <div class="wrapperContent">
+            <h3 class="text-center">Ihre weiteren Optionen:</h3>
+            <a class="borderedArrowLink borderedArrowLinkWithIcon" [routerLink]="'/postfach/nachricht-neu'">
+              <img src="../../../assets/img/kontakt-small.svg" class="borderedArrowLinkIcon"/>
+              Kontakt aufnehmen
+            </a>
+
+        </div>
+      </div>
+      <div style="clear: both;"></div>
+      <div class="invoiceFurtherOptions">
+
+        <div class="halfSubPageLeftWrapper">
+
+        </div>
+        <div class="halfSubPageRightWrapper">
+
+          </div>
+        </div>
+      </div>
+    </section>
+</div>

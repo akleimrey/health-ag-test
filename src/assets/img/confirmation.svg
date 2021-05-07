@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="114.667" height="114.583" viewBox="0 0 114.667 114.583">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="häkchen_maske" data-name="häkchen maske" d="M12679.5,1860l31.25,30.75,70.917-70.083-29-28.25Z" transform="translate(-12500 -1630)" fill="#8b8b8b" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Häkchen" transform="translate(-167 -162.417)">
+    <path id="Pfad_329" data-name="Pfad 329" d="M10.127,12" transform="translate(197.89 239.333)" fill="none" stroke="#e45d65" stroke-miterlimit="10" stroke-width="6"/>
+    <rect id="Rechteck_83" data-name="Rechteck 83" width="72.199" height="72.206" transform="translate(171 200.794)" fill="none" stroke="#28297d" stroke-miterlimit="10" stroke-width="8"/>
+    <g id="Gruppe_maskieren_20" data-name="Gruppe maskieren 20" clip-path="url(#clip-path)">
+      <line id="Linie_82" data-name="Linie 82" x1="39.717" y2="39.709" transform="translate(229.95 184.496)" fill="none" stroke="#28297d" stroke-miterlimit="10" stroke-width="8"/>
+      <path id="Pfad_328" data-name="Pfad 328" d="M43.242,8.95,25.375,26.82,7.509,8.95" transform="translate(181.604 220.361)" fill="none" stroke="#e45d65" stroke-miterlimit="10" stroke-width="8"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg id="Send_button" data-name="Send button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52" height="52" viewBox="0 0 52 52">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rechteck_62" data-name="Rechteck 62" width="52" height="52" rx="26" transform="translate(332 247)" fill="none"/>
+    </clipPath>
+  </defs>
+  <rect id="Rechteck_54" data-name="Rechteck 54" width="52" height="52" rx="26" fill="#25b8cd"/>
+  <g id="Gruppe_maskieren_9" data-name="Gruppe maskieren 9" transform="translate(-332 -247)" clip-path="url(#clip-path)">
+    <path id="XMLID_4_" d="M20.5,51l31-13.3-31-13.3V34.771L42.651,37.7,20.5,40.633Z" transform="translate(324.5 235.6)" fill="#fff"/>
+  </g>
+  <g id="Combined-Shape" transform="translate(10.833 8.741)" opacity="0">
+    <path id="Combined-Shape-2" data-name="Combined-Shape" d="M16.759,25.138v1.676H0V18.435H8.379V0h8.379Z" transform="translate(18.961 0) rotate(45)" fill="#fff"/>
+  </g>
+</svg>

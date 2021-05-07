@@ -1,0 +1,66 @@
+<div class="listedInstallment" data-link="">
+  <div class="installmentImage">
+    <div class="greyCircle">
+      <img src="../../../assets/img/chain.svg" id="chainSymbolInvoice"/>
+    </div>
+  </div>
+  <div class="installmentDate">
+    <h4>{{ rechnung.invoiceDueDate | date: 'dd.MMMM yyyy' }}</h4>
+    <p class="invoiceNumber">{{ rechnung.invoiceNo }}</p>
+    <p class="moreDetailLink">
+      <a routerLink="./rechnung-detail" [state]="rechnung">{{
+        'health-ag.rechnungen.rechnung_start_info' | translate
+      }}</a>
+    </p>
+  </div>
+  <div class="installmentTitle">
+    <h4>{{ rechnung.office.name }}</h4>
+    <p class="invoiceWarningMessage">letzte Rate fällig vor 4 Tagen</p>
+  </div>
+  <div class="installmentStatus">
+    <!-- <h4>{{ rechnung.currentStatus }}</h4> -->
+
+    <ng-container *ngIf="getPaymentStatus() === 'IN_PROCESS' || getPaymentStatus() === 'IN PAYMENT'">
+      <h4>{{ 'health-ag.rechnungen.bezahl_status_in_zahlung' | translate }}</h4>
+      <img src="../../../assets/img/in-zahlung.svg" />
+    </ng-container>
+
+    <ng-container *ngIf="getPaymentStatus() === 'PAID'">
+      <h4>{{ 'health-ag.rechnungen.bezahl_status_bezahlt' | translate }}</h4>
+      <img src="../../../assets/img/bezahlt.svg" />
+    </ng-container>
+
+    <ng-container *ngIf="getPaymentStatus() === 'OPEN'">
+      <h4>{{ 'health-ag.rechnungen.bezahl_status_offen' | translate }}</h4>
+      <img src="../../../assets/img/offen.svg" />
+    </ng-container>
+
+    <ng-container *ngIf="getPaymentStatus() === 'OVERDUE'">
+      <h4>
+        {{ 'health-ag.rechnungen.bezahl_status_ueberfaellig' | translate }}
+      </h4>
+      <img src="../../../assets/img/ueberfaellig.svg" />
+    </ng-container>
+
+    <h4
+      class="paymentInfo"
+      [ngClass]="{
+        paying: getPaymentStatus() === 'IN_PROCESS',
+        notPaying: getPaymentStatus() === 'OVERDUE'
+      }"
+    >
+      <ng-container *ngIf="!doesInvoiceHavePaymentPlan()">
+        <span class="paymentNumber">{{
+          rechnung.invoiceTotal | euroCurrency
+        }}</span>
+      </ng-container>
+
+      <ng-container *ngIf="doesInvoiceHavePaymentPlan()">
+        <span class="paymentState">mtl. Rate</span>
+        <span class="paymentNumber">{{
+          rechnung.installmentCurrent | euroCurrency
+        }}</span>
+      </ng-container>
+    </h4>
+  </div>
+</div>

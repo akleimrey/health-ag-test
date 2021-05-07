@@ -1,0 +1,45 @@
+#nameModal {
+}
+
+.modal .modal-content.openModal {
+  opacity: 1;
+}
+
+.modal {
+  border-radius: 2px;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  font-family: 'MarkProReg';
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  /* Modal Content/Box */
+  .modal-content {
+    opacity: 0;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 0px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    transform: translate(0px, -30px);
+    p {
+      text-align: center;
+    }
+    button.closeModal {
+      border: none;
+      outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      width: 100%;
+      height: 50px;
+    }
+  }
+}

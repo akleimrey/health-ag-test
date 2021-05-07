@@ -1,0 +1,277 @@
+<div id="rechnungDetail">
+  <h1>Rechnungsübersicht</h1>
+  <section>
+    <img src="../../../assets/img/navigation-back.svg" class="navigationIcon">
+    <div id="leftAreaInvoiceDetail" class="halfSubPageLeftWrapper">
+      <div class="wrapperContent">
+        <!-- Gemeinsame Ratenzahlung, TO DO: übertragen auf eigene Seite -->
+
+        <img src="../../../assets/img/rechnung.svg" class="invoiceIcon" />
+        <h3 id="invoiceDate">
+          Ihre Rechnung <br />
+          vom {{invoice.invoiceCreateDate}}
+        </h3>
+        <div id="statusIcon">
+          <h3>In Zahlung</h3>
+          <img src="../../../assets/img/in-zahlung.svg" />
+        </div>
+        <br />
+        <div style="clear: both"></div>
+        <hr />
+        <strong>Praxis:</strong>
+        <p>{{invoice.office.name}}</p>
+        <div class="doctorsOfficeAddress">
+          <p>
+            {{invoice.office.address.addition}}<br />
+            {{invoice.office.address.street}}<br />
+            {{invoice.office.address.postalCodecode}} {{invoice.office.address.city}}
+          </p>
+        </div>
+        <div class="doctorsOfficeContact">
+          <p>
+            {{invoice.office.officeWebPage}}<br />
+            {{invoice.office.phoneNo | phone}}
+          </p>
+        </div>
+        <div style="clear: both"></div>
+        <a class="borderedArrowLink borderedArrowLinkWithIcon" [routerLink]="'../rechnung-datei'">
+          <img
+            src="../../../assets/img/rechnung-grey.svg"
+            class="borderedArrowLinkIcon"
+          />
+          Komplette Rechnung anzeigen
+        </a>
+        <div class="invoiceDue">
+          <strong>Fällig</strong>
+          <p>in 11 Tagen / 23.06.2020</p>
+        </div>
+        <div style="clear: both"></div>
+        <div class="combinedToPay">
+          <strong>Gesamt</strong>
+          <h2>{{invoice.invoiceTotal | euroCurrency}}</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- TODO: Das Areal wird nur geladen, wenn der Status der Rechnung auf "In Zahlung ist" / Siehe Screen 24 von 61 -->
+
+    <!-- Ende der Vorzeitigen Ablösung -->
+
+    <ng-container *ngIf="doesInvoiceHavePaymentPlan(); else setPaymentRate">
+      <div id="rightAreaPaymentDetail" class="halfSubPageRightWrapper">
+        <div class="wrapperContent">
+          <div class="greyBackground">
+            <h2> {{templateInvoicePaymentState}} </h2>
+            <div class="particlePaymentDisplayWrapper">
+              <div class="particlePaymentDisplayLabeling">
+                <h2><ng9-odometer [number]="invoice.installmentDone" [format]="'(.ddd),dd'"></ng9-odometer> €</h2>
+                <span>bereits gezahlt</span>
+              </div>
+
+              <div class="particlePaymentDisplayLabeling labelingRight">
+                <h2><ng9-odometer [number]="invoice.installRemaining" [format]="'(.ddd),dd'"></ng9-odometer> €</h2>
+                <span>offen</span>
+              </div>
+
+              <div id="particlePaymentDisplay">
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+                <div class="paymentParticle"></div>
+              </div>
+            </div>
+            <div class="particlePaymentDisplayLabeling labelingCenter">
+              <h2><ng9-odometer [number]="invoice.installmentCurrent" [format]="'(.ddd),dd'"></ng9-odometer> €</h2>
+              <span>Nächste Rate in 6 Tagen fällig</span>
+            </div>
+
+            <p></p>
+            <a [routerLink]='"../abloesung/datum"'><div class="button">Vorzeitig ablösen</div></a>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Dieses Areal wird nur geladen, wenn der Status der Rechnung "Offen" ist -->
+    <ng-template #setPaymentRate>
+      <div id="rightAreaPaymentDetail" class="halfSubPageRightWrapper">
+        <div class="wrapperContent">
+          <div class="greyBackground">
+            <h2>
+              Zahlen Sie, wie Sie mögen – mit einem Happen oder Stück für Stück:
+            </h2>
+            <div
+              id="payInRatesTab"
+              class="paymentTab active"
+              data-tabcontent="payInRatesContent"
+            >
+              In Raten bezahlen
+            </div>
+            <div
+              id="payNowTab"
+              class="paymentTab"
+              data-tabcontent="payNowContent"
+            >
+              Sofort bezahlen
+            </div>
+            <div style="clear: both"></div>
+            <div id="payInRatesContent" class="tabContent tabContentActive">
+              <div id="paymentDuration">
+                Laufzeit: <span><strong><ng9-odometer [number]="currentValue" [format]="'d'"></ng9-odometer> Monate</strong></span>
+              </div>
+
+
+              <input type="range" (input)="returnValues($event.target.value)" [min]="minMonths" [max]="maxMonths" [value]="currentValue" step="1" list="tickmarks" id="rateSlider">
+
+<!--
+              <div class="chrome">
+                <input type="range" value="50" />
+              </div> -->
+
+
+              <strong>Rate: </strong><span>54,30 €</span>
+
+              <div id="interestInfo">
+                <div class="halfSubPageLeftWrapper">
+                  <p><strong>0 % </strong>effektiver Jahreszins</p>
+                </div>
+                <div class="halfSubPageRightWrapper">
+                  <p><strong>0 % </strong>fester Sollzinssatz</p>
+                </div>
+              </div>
+              <div style="clear: both"></div>
+
+              <div id="processingFee" class="relative">
+                <a class="borderedArrowLink">Keine Bearbeitungsgebühr</a>
+                <img src="../../../assets/img/help.svg" class="infoIcon"/>
+              </div>
+              <div class="button">Ratenzahlung beantragen</div>
+            </div>
+            <div id="payNowContent" class="tabContent">
+              <div id="choosePaymentMethodSwitch">
+                <h3 class="activeSwitchText">Per Überweisung</h3>
+
+                <label class="switch">
+                  <input type="checkbox" id="paymentMethodSwitchCheck">
+                  <span class="slider round"></span>
+                </label>
+
+                <h3>Per Lastschrift</h3>
+              </div>
+
+              <div id="payNowForm">
+                <div class="inputField">
+                  <label>Betrag: </label> <p>7.323,22 €</p>
+                </div>
+                <div class="inputField">
+                  <label>Empfänger: </label><p>Health AG</p>
+                </div>
+                <div class="inputField">
+                  <label>IBAN: </label><p>DE21 6009 0700 0342 7190 33</p>
+                </div>
+                <div class="inputField"><label>Kontoinhaber: </label> <p>0000457457841555</p></div>
+              </div>
+
+              <div id="payPerLastschrift">
+                <div class="inputField">
+                  <label>Kontoinhaber: </label> <input type="text" id="kontoinhaber">
+                </div>
+                <div class="inputField">
+                  <label>IBAN: </label><input type="text" id="IBAN">
+                </div>
+                <div class="inputField">
+                  <label>BIC: </label><input type="text" id="BIC">
+                </div>
+                <div class="inputField"><label>Fälligkeit: </label> <p> in 30 Tagen / 23.10.2020</p></div>
+                <a href="#"><div class="button">Rechnung per Lastschrift bezahlen</div></a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <!-- Ende der PaymentDetail -->
+
+    <div style="clear: both"></div>
+    <div class="invoiceFurtherOptions">
+      <h3 class="text-center">Ihre weiteren Optionen:</h3>
+      <div class="halfSubPageLeftWrapper">
+        <div class="wrapperContent">
+          <a [routerLink]="'../zahlung-aufschub'" class="borderedArrowLink borderedArrowLinkWithIcon">
+            <img
+              src="../../../assets/img/time.svg"
+              class="borderedArrowLinkIcon"
+            />
+            Zahlungsaufschub beantragen
+          </a>
+          <a class="borderedArrowLink borderedArrowLinkWithIcon" href="#">
+            <img
+              src="../../../assets/img/upload.svg"
+              class="borderedArrowLinkIcon"
+            />
+            Versicherungsschreiben hochladen
+          </a>
+        </div>
+      </div>
+      <div class="halfSubPageLeftWrapper">
+        <div class="wrapperContent">
+          <a class="borderedArrowLink borderedArrowLinkWithIcon" [routerLink]="'/postfach/nachricht-neu'">
+            <img
+              src="../../../assets/img/contact.svg"
+              class="borderedArrowLinkIcon"
+            />
+            Kontakt aufnehmen
+          </a>
+          <a class="borderedArrowLink borderedArrowLinkWithIcon" (click)="downloadInvoicePdfData()">
+            <img
+              src="../../../assets/img/rechnung-grey.svg"
+              class="borderedArrowLinkIcon"
+            />
+            Komplette Rechnung anzeigen
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

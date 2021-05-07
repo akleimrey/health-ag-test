@@ -1,0 +1,114 @@
+<div id="invoiceFilter">
+  <h1>Filter</h1>
+  <div id="mobileOnlyBackground" class="mobileOnlyBackgroundWhite"></div>
+  <section class="subPage">
+    <a [routerLink]="'..'">
+      <img
+        src="../../../assets/img/navigation-back.svg"
+        class="navigationIcon"
+      />
+    </a>
+    <img
+      src="../../../assets/img/navigation-close.svg"
+      class="navigationIconClose"
+    />
+    <div id="wrapperContent" class="invoiceCopyFrame">
+      <div class="select-filter-options">
+        <form
+          [formGroup]="filterFormGroup"
+          #filterForm="ngForm"
+          *ngIf="filterFormGroup"
+          novalidate
+        >
+          <div class="outer-wrapper">
+            <p class="option-header">Nach Zahlungsstand filtern</p>
+            <div class="option-wrapper">
+              <input
+                [formControlName]="paymentStateNgForm"
+                type="radio"
+                id="all_invoices"
+                [value]="ALL_INVOICES"
+              />
+              <label for="all_invoices">Alle Rechnungen</label>
+            </div>
+
+            <div class="option-wrapper">
+              <input
+                [formControlName]="paymentStateNgForm"
+                type="radio"
+                id="open_invoices"
+                [value]="OPEN"
+              />
+              <label for="open_invoices">offen</label>
+            </div>
+
+            <div class="option-wrapper">
+              <input
+                [formControlName]="paymentStateNgForm"
+                type="radio"
+                id="in_payment_invoices"
+                [value]="IN_PROCESS"
+              />
+              <label for="in_payment_invoices">in Zahlung</label>
+            </div>
+
+            <div class="option-wrapper">
+              <input
+                [formControlName]="paymentStateNgForm"
+                type="radio"
+                id="paid_invoices"
+                [value]="PAID"
+              />
+              <label for="paid_invoices">Bezahlt</label>
+            </div>
+
+            <div class="option-wrapper">
+              <input
+                [formControlName]="paymentStateNgForm"
+                type="radio"
+                id="overdue_invoices"
+                [value]="OVERDUE"
+              />
+              <label for="overdue_invoices">Überfällig</label>
+            </div>
+
+            <p class="option-header">Nach Datum sortieren</p>
+            <div class="option-wrapper">
+              <input
+                [formControlName]="invoiceDateNgForm"
+                type="radio"
+                id="invoiceStateDateAsc"
+                value="DATE_ASC"
+              />
+              <label for="invoiceStateDateAsc">Aufsteigend</label>
+            </div>
+
+            <div class="option-wrapper">
+              <input
+                [formControlName]="invoiceDateNgForm"
+                type="radio"
+                id="invoiceStateDateDesc"
+                value="DATE_DESC"
+              />
+              <label for="invoiceStateDateDesc">Absteigend</label>
+            </div>
+
+            <p class="option-header">Nach Patienten filtern</p>
+            <div class="option-wrapper">
+              <input
+                [formControlName]="patientsNgForm"
+                type="radio"
+                id="invoice_filter_all"
+                value="ALL"
+              />
+              <label for="invoice_filter_all">Alle</label>
+            </div>
+          </div>
+          <a [routerLink]="'..'"
+            ><div class="invoiceCopy button">Filter anwenden</div></a
+          >
+        </form>
+      </div>
+    </div>
+  </section>
+</div>

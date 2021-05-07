@@ -1,0 +1,66 @@
+<section id="welcome">
+    <div class="welcomeTileWrapper" id="messageTile">
+        <div class="welcomeTile blueBackground">
+            <h1>Willkommen!</h1>
+        </div>
+    </div>
+
+    <div class="welcomeTileWrapper">
+        <a href="#">
+            <div class="welcomeTile">
+                <img src="../../../assets/img/post.svg" class="tileIcon"/>
+                <h3>Sie haben eine neue Nachricht im Posteingang!</h3>
+                <a href="#">Zur Nachricht</a>
+            </div>
+        </a>
+    </div>
+
+    <div [routerLink]='"/profil"' class="onlyVisibleForMobile" id="mobileProfileLink">
+        <img src="../../../assets/img/profil-mobile.svg" />
+        <p>Profil</p>
+    </div>
+
+    <div class="welcomeTileWrapper imageTileWrapper">
+        <a href="#">
+        <div class="welcomeTile" style="background-image: url(../../../assets/img/zahnaerztin.png)">
+            <img class="tileBackground"/>
+        </div>
+        </a>
+    </div>
+    <div class="welcomeTileWrapper">
+        <a href="#">
+            <div class="welcomeTile moreTextTile mobileLightBlueBackground">
+                <img src="../../../assets/img/header-hilfe-services.svg" class="tileIcon"/>
+                <h3>Hotline</h3>
+                <p>sed diam nonumy eirmod
+                    tempor invidunt ut.</p>
+
+            </div>
+        </a>
+    </div>
+    <div class="welcomeTileWrapper">
+        <a href="#">
+            <div class="welcomeTile moreTextTile redBackground">
+                <img src="../../../assets/img/header-hilfe-services.svg" class="tileIcon"/>
+                <h3>Hotline</h3>
+                <p>sed diam nonumy eirmod
+                    tempor invidunt ut.</p>
+
+                <a href="#">Zur Nachricht</a>
+            </div>
+        </a>
+    </div>
+    <div class="welcomeTileWrapper">
+        <a href="#">
+            <div class="welcomeTile moreTextTile lightBlueBackground mobileGreyBackground">
+                <img src="../../../assets/img/header-hilfe-services.svg" class="tileIcon"/>
+                <h3>Hotline</h3>
+                <p>sed diam nonumy eirmod
+                    tempor invidunt ut.</p>
+
+                <a href="#">Zur Nachricht</a>
+            </div>
+        </a>
+    </div>
+</section>
+<app-mobile-bar></app-mobile-bar>

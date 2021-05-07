@@ -1,0 +1,70 @@
+
+  <!-- alternate background for mobile view -->
+  <div id="mobileOnlyBackgroundRechnungen"></div>
+
+  <!-- here comes the content -->
+  <div id="rechnungen">
+    <div id="fixedTop">
+      <h1>{{ 'health-ag.rechnungen.header' | translate }}</h1>
+      <section>
+        <a
+        [routerLink]="'..'">
+        <img src="../../../assets/img/navigation-back.svg" class="navigationIcon"></a>
+        <div #installmentBox id="payInInstallmentBox" class="areaBox">
+          <div id="payInInstallment" class="boxContent">
+            <div class="twoThird">
+              <h3>
+                {{ 'health-ag.rechnungen.intro' | translate }}
+              </h3>
+            </div>
+            <div class="oneThird">
+              <div routerLink="/ratenzahlung" class="button">
+                {{ 'health-ag.rechnungen.start_button' | translate }}
+                <img src="../../../assets/img/arrow-light-blue-right.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="invoiceCounterBox" class="areaBox">
+          <div id="invoiceCounter" class="boxContent">
+            <div id="jointlyInstallments" class="oneThird">
+              <h3 class="textLightBlue">2</h3>
+              <span>{{
+                'health-ag.rechnungen.rechnungen_ratenzahlungen' | translate
+              }}</span>
+            </div>
+            <div id="openInstallments" class="oneThird">
+              <h3 class="textOrange">4</h3>
+              <span>{{
+                'health-ag.rechnungen.rechnungen_offen' | translate
+              }}</span>
+            </div>
+            <div id="payedInstallments" class="oneThird">
+              <h3 class="textDarkBlue">4</h3>
+              <span>{{
+                'health-ag.rechnungen.rechnungen_bezahlt' | translate
+              }}</span>
+            </div>
+          </div>
+        </div>
+        <div id="searchAreaBox" class="areaBox">
+          <div id="searchArea" class="boxContent">
+            <img src="../../../assets/img/search-blue.svg" /><input #filterInput placeholder="Rechnungs-Nr., Status..." />
+          </div>
+        </div>
+        <div id="filterBox" class="areaBox">
+          <a [routerLink]="'./rechnung-filter'"><div id="filter" class="boxContent"><span>Filter</span><img src="../../../assets/img/filter.svg" /></div></a>
+        </div>
+        <div>
+          <span *ngIf="getFirstItem()" class="tag pill-input"><img class="close" src="../../../assets/img/close-filter.svg" />{{filterTabs[0][1]}}</span>
+          <span *ngIf="getSecondItem()" class="tag pill-input"><img class="close" src="../../../assets/img/close-filter.svg" />{{filterTabs[1][1]}}</span>
+          <span *ngIf="getThirdItem()" class="tag pill-input"><img class="close" src="../../../assets/img/close-filter.svg" />{{filterTabs[2][1]}}</span>
+        </div>
+      </section>
+    </div>
+    <section id="installmentList">
+      <ng-container *ngFor="let item of copyArray">
+        <app-rechnung [rechnung]="item"></app-rechnung>
+      </ng-container>
+    </section>
+  </div>

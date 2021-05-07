@@ -1,0 +1,32 @@
+{
+	"health-ag": {
+		"navbar": {
+			"logout": "Logout",
+			"postfach": "Postfach",
+			"profil": "Profil",
+			"rechnung": "Rechnungen",
+			"services": "Hilfe & Services"
+		},
+		"rechnungen": {
+			"bezahl_status_bezahlt": "Bezahlt",
+			"bezahl_status_in_zahlung": "In Zahlung",
+			"bezahl_status_offen": "Offen",
+			"bezahl_status_ueberfaellig": "Überfällig",
+			"header": "Rechnungen",
+			"intro": "Bezahlen Sie Rechnungen bequem gemeinsam in einer Ratenzahlung.",
+			"rechnung_start_info": "Mehr Informationen...",
+			"rechnungen_bezahlt": "bezahlte Rechnungen",
+			"rechnungen_offen": "offene Rechnungen",
+			"rechnungen_ratenzahlungen": "gemeinsame Ratenzahlungen",
+      "start_button": "Jetzt starten",
+      "rechnung_detail": {
+        "invoice_processed": "Vielen Dank! Wir prüfen nun Ihren Antrag.",
+        "percentagePaid_0to20" : "Jetzt gehts los!",
+        "percentagePaid_20to49" : "Zahlung läuft, danke!",
+        "percentagePaid_50to59" : "Bergfest - Sie haben bereits die Hälfte Ihrer Raten bezahlt.",
+        "percentagePaid_60to90" : "Endspurt - fast geschafft!",
+        "percentagePaid_100" : "Erledigt! Diese Rechnung ist vollständig beglichen."
+      }
+		}
+	}
+}

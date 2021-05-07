@@ -1,0 +1,13 @@
+.info-versicherung {
+  text-align: center;
+}
+
+section {
+  .info-versicherung {
+    color: #707070;
+  }
+
+  .info-versicherung:first-child {
+    margin-top: 100px;
+  }
+}

@@ -1,0 +1,22 @@
+div.select-filter-options {
+  display: inline-flex;
+  flex-direction: column;
+  div.outer-wrapper {
+    align-self: center;
+    p.option-header {
+      border-top: 1px solid #dcdcdc;
+      border-bottom: 1px solid #dcdcdc;
+      margin: 0;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    div.option-wrapper {
+      display: flex;
+    }
+  }
+}

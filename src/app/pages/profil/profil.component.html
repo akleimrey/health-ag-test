@@ -1,0 +1,219 @@
+<app-modal #nameModal [modalId]="'nameModal'">
+  <div class="modal-body">
+    <p>Bitte kontaktieren Sie unseren Support</p>
+    <img
+      id="popupTelephoneIcon"
+      src="../../../assets/img/telephone-small.svg"
+    />
+    <h3 class="textDarkBlue text-center">+49 40 524 709-000</h3>
+    <p class="textDarkBlue">Montag-Freitag 8-18 Uhr</p>
+  </div>
+  <button class="closeModal" type="button">Fenster schließen</button>
+</app-modal>
+
+<div id="fixedTop" class="fixedTopSubPage mobileHeadingCenter">
+  <h1>Profil</h1>
+</div>
+
+<section id="profil" class="subPage">
+  <img src="../../../assets/img/navigation-back.svg" class="navigationIcon" />
+  <img src="../../../assets/img/profile.svg" class="headerImage" />
+
+  <div class="borderedHeadline">
+    <h3>Persönliche Daten</h3>
+  </div>
+
+  <div class="profileData">
+    <div class="dataName">
+      <strong>Name</strong>
+    </div>
+    <div class="dataValue">
+      <ng-container
+        *ngIf="userForm?.lastName && userForm?.firstName; else name"
+      >
+        {{ userForm.lastName }}, {{ userForm.firstName }}
+      </ng-container>
+      <ng-template #name>Kein Name</ng-template>
+    </div>
+    <img
+      src="../../../assets/img/edit-data.svg"
+      (click)="openNameModal(nameModal)"
+      class="editDataIcon"
+    />
+  </div>
+  <div class="profileData">
+    <div class="dataName">
+      <strong>Geburtsdatum</strong>
+    </div>
+    <div class="dataValue">
+      <ng-container
+        *ngIf="userForm?.dateOfBirth && userForm?.dateOfBirth; else birthdate"
+      >
+        {{ userForm.dateOfBirth }}
+      </ng-container>
+      <ng-template #birthdate> Kein Geburtstag </ng-template>
+    </div>
+  </div>
+  <div class="profileData">
+    <div class="dataName">
+      <strong>Anschrift</strong>
+    </div>
+    <ng-container
+      *ngIf="
+        userForm?.address?.street &&
+          userForm?.address?.postalCodecode &&
+          userForm?.address?.city;
+        else address
+      "
+    >
+      <div class="dataValue">
+        {{ userForm.address.street }} <br />{{
+          userForm.address.postalCodecode
+        }}
+        {{ userForm.address.city }}
+      </div>
+    </ng-container>
+    <ng-template #address>
+      <div class="dataValue">Keine Addresse</div>
+    </ng-template>
+
+    <a [routerLink]="'edit/address'"
+      ><img src="../../../assets/img/edit-data.svg" class="editDataIcon"
+    /></a>
+  </div>
+
+  <div class="borderedHeadline">
+    <h3>Kontaktdaten</h3>
+  </div>
+
+  <div class="profileData">
+    <div class="dataName">
+      <strong>Telefon</strong>
+    </div>
+    <ng-container *ngIf="userForm?.phoneNumber; else phone">
+      <div class="dataValue">{{ userForm.phoneNumber | phone }}</div>
+    </ng-container>
+    <ng-template #phone>
+      <div class="dataValue">Keine Telefon Nr.</div>
+    </ng-template>
+
+    <a [routerLink]="'edit/phone'"
+      ><img src="../../../assets/img/edit-data.svg" class="editDataIcon"
+    /></a>
+  </div>
+  <div class="profileData">
+    <div class="dataName">
+      <strong>E-Mail</strong>
+    </div>
+    <!-- <img src="../../../assets/img/edit-data.svg" class="editDataIcon" /> -->
+    <ng-container *ngIf="userForm?.email; else email">
+      <div class="dataValue">{{ userForm.email }}</div>
+    </ng-container>
+    <ng-template #email>
+      <div class="dataValue">Keine E-Mail</div>
+    </ng-template>
+
+    <a [routerLink]="'edit/email'"
+      ><img src="../../../assets/img/edit-data.svg" class="editDataIcon"
+    /></a>
+  </div>
+
+  <div class="borderedHeadline">
+    <h3>Kontoverbindung</h3>
+  </div>
+  <div class="profileData">
+    <div class="dataName">
+      <strong>Kontoinhaber</strong><br />
+      <strong>IBAN</strong><br />
+      <strong>BIC</strong>
+    </div>
+
+    <ng-container
+      *ngIf="
+        userForm?.bankInformation?.accountHolder &&
+          userForm?.bankInformation?.iban &&
+          userForm?.bankInformation?.bic;
+        else bankInformation
+      "
+    >
+      <div class="dataValue">
+        {{ userForm?.bankInformation?.accountHolder }}<br />
+        {{ userForm?.bankInformation?.iban }}<br />
+        {{ userForm?.bankInformation?.bic }}<br />
+      </div>
+
+      <!-- <div class="dataValue">
+      Peter Schmidt-Fleckenstein<br />
+      DE49954341966687510939<br />
+      ERFBDE8E759<br />
+    </div> -->
+    </ng-container>
+
+    <ng-template #bankInformation>
+      <div class="dataValue">
+        Keine Bank-Informationen<br />
+        &nbsp;<br />
+        &nbsp;<br />
+      </div>
+    </ng-template>
+
+    <a [routerLink]="'edit/bankaccount'"
+      ><img src="../../../assets/img/edit-data.svg" class="editDataIcon"
+    /></a>
+  </div>
+
+  <div class="borderedHeadline">
+    <h3>Sicherheit</h3>
+  </div>
+  <div class="profileData">
+    <div class="dataName">
+      <strong>Passwort</strong>
+    </div>
+    <div class="dataValue">*********</div>
+    <a [routerLink]="'edit/password'"
+      ><img src="../../../assets/img/edit-data.svg" class="editDataIcon"
+    /></a>
+  </div>
+  <div class="profileData">
+    <div class="dataName">
+      <strong>Sicherheitsfrage</strong>
+    </div>
+    <div class="dataValue">*********</div>
+    <a [routerLink]="'edit/security'"
+      ><img src="../../../assets/img/edit-data.svg" class="editDataIcon"
+    /></a>
+  </div>
+
+  <div class="borderedHeadline">
+    <h3>Versandart Rechnung</h3>
+  </div>
+  <div class="profileData">
+    <div class="dataName">
+      <img
+        src="../../../assets/img/rechnungen-digital.svg"
+        class="hideForMobile"
+      />
+    </div>
+    <div class="dataValue">Rechnungen nur digital erhalten</div>
+    <label class="switch">
+      <!-- TODO: Read checkbox value -->
+      <input (click)="switchDigitalInvoices($event.target.checked)" type="checkbox" id="getInvoicesDigitally" />
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <div class="borderedHeadline">
+    <h3>Konto</h3>
+  </div>
+  <div class="profileData">
+    <div class="dataName">
+      <img src="../../../assets/img/konto-sperren.svg" class="hideForMobile" />
+    </div>
+    <div class="dataValue">
+      Benutzerkonto sperren
+      <a [routerLink]="'edit/disable'"
+        ><img src="../../../assets/img/arrow-right.svg" class="editDataIcon"
+      /></a>
+    </div>
+  </div>
+</section>
